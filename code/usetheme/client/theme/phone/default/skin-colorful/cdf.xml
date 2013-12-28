@@ -1,0 +1,53 @@
+<cdf>
+	<id>skin-colorful</id>
+	<name>多色风格</name>
+	<description>以多色调为主的皮肤</description>
+	<date>2012-02-16</date>
+	<vendor url="http://nj.www.fiberhome.com.cn" email="support@nj.fiberhome.com.cn">fiberhome</vendor>
+	<setting>
+		<!-- 顶级容器 -->
+		<attrs/>
+		<body background-color="#f7f8fa"/>
+		<hr border-color="#cccccc"/>
+		<footer>
+			<!-- clsss：仿menubar效果 -->
+			<menubar background-color="#f7f8fa" color="#ffffff" background-image="theme:image/menubar/menubar_overlay.png" padding="8 4 8 4"/>
+		</footer>
+		<!-- 布局控件 -->
+		<div>
+			<!-- class：矩形框 -->
+			<container width="100%"	border-radius="4" border-size="1" border-color="#cccccc" margin="4 4 4 4" background-color="#ffffff"/>
+			<!-- class：查询区域背景 -->
+			<status-bar background-color="#a9a9a9" background-click-color="#6b6b6b" border-size="0" color="white"/>
+		</div>
+		
+		<!-- 表单控件 -->
+		<button overlay="none" overlay-click="none" border-color="#007a57" border-size="0" background-color="#eb9b34" background-click-color="#db7722" border-click-color="transparent" color="white" click-color="white"/>
+		<checkbox background-color="#eb9b34" overlay="theme:image/icon/checkbox_overlay.png,theme:image/icon/checkbox_overlay_selected.png" border-color="#cccccc"/>
+		<listitem-checkbox background-color="#eb9b34" overlay="theme:image/icon/checkbox_overlay.png,theme:image/icon/checkbox_overlay_selected.png" border-color="#cccccc"/>
+		<radio background-color="#eb9b34" overlay="theme:image/icon/radio_overlay.png,theme:image/icon/radio_overlay_selected.png" border-color="#cccccc"/>
+		<switch on-background-color="#eb9b34" overlay="none"/>
+		<select overlay="none" button-background-color="transparent"/>
+		
+		<!-- 导航控件 -->
+		<titlebar background-color="transparent" title-color="#838383" overlay="theme:image/titlebar/titlebar.png" icon="theme:image/titlebar/back.png" clickicon="theme:image/titlebar/back_click.png" />
+		<toggle height="40" padding="0 8" background-color="#f2f2f2" background-click-color="#eeeeee" border-size="0" border-bottom-size="1" border-color="#cccccc" color="#333333" rcolor="#666666">
+			<group-title height="30"/>
+			<none background-color="#a9a9a9" background-click-color="#a9a9a9"/>
+			<transparent background-color="transparent" background-click-color="transparent" border-size="0" border-bottom-size="0" color="#838383"/>
+		</toggle>
+		<listitem-one background-click-color="#efefef" border-color="#cccccc" color="#333333" sndcolor="#9b9b9b" rcolor="#eb9b34">
+			<none background-click-color="transparent"/>
+		</listitem-one>
+		<listitem-two background-click-color="#efefef" border-color="#cccccc" color="#333333" sndcolor="#9b9b9b" rcolor="#eb9b34">
+			<none background-click-color="transparent"/>
+		</listitem-two>
+		<menubar background-color="#f7f8fa" menu-color="#828282" menu-click-color="#6b6b6b" menu-current-color="#6b6b6b" menu-background-current-color="#f7f8fa" menu-background-click-color="#f7f8fa"/>
+		<tabbar tab-background-color="transparent" tab-background-current-color="transparent" border-color="#cccccc" border-current-color="#eb9b34" current-color="#6b6b6b" color="#828282" click-color="#6b6b6b"/>
+		
+		<!-- 弹出框 -->
+		<popmenu title-overlay="none" title-background-color="#f7f8fa" title-color="#333333" background-color="#f7f8fa" color="#333333" border-color="#cccccc" border-size="0"/>
+		<dialog title-overlay="none" title-background-color="#f7f8fa" title-color="#333333" background-color="#f7f8fa" color="#333333" border-color="#cccccc" border-size="0"/>
+		<alert title-overlay="none" title-background-color="#f7f8fa" title-color="#333333" background-color="#f7f8fa" color="#333333" border-color="#cccccc" border-size="0" icon-info="theme:image/icon/info.png" icon-alarm="theme:image/icon/alarm.png" icon-error="theme:image/icon/error.png" icon-ask="theme:image/icon/ask.png"/>
+	</setting>
+</cdf>

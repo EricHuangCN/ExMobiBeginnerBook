@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<maxml version="2.0" xmlns="http://www.nj.fiberhome.com.cn/map"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.nj.fiberhome.com.cn/map maxml-2.0.xsd">
+	<config>
+		<database id="postgresql" dbtype="postgresql" ip="218.94.117.235" port="1006" dbname="app" user="sitest" password="123456" maxconn="10" minconn="2" defconn="5" />	
+	</config>
+	
+	<route baseaddr="http://sql">
+		<!-- 查询操作 -->
+		<forward pattern="/query.jsp.*" path="dbQuery.jsp"/>
+		<!-- 显示详情 -->
+		<forward pattern="/show.jsp.*" path="dbShow.jsp"/>
+		<!-- 更新操作 -->
+		<forward pattern="/update.jsp" path="dbUpdate.jsp"/>
+		<!-- 删除操作 -->
+		<forward pattern="/delete.jsp.*" path="dbDelete.jsp"/>
+		<!-- 插入操作 -->
+		<forward pattern="/insert.jsp.*" path="dbInsert.jsp"/>
+		<!-- 获取第一条数据 -->
+		<forward pattern="/getFirstData.jsp" path="dbFirstData.jsp"/>
+	</route>
+</maxml>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<config clientversion="4" scope="client" devicetype="all">
+    <appid>pushdemo</appid>
+    <appname>直推式推送开发实例</appname>
+    <description></description>
+    <version>1.0</version>
+    <date>2013-12-14</date>
+    <homepage src="res:page/login.xhtml"/>
+    <faultconfig src=""/>
+    <vendor url="" email=""></vendor>
+    <access orientation="port" land="false" network="true" gps="true" camera="true" certificate="true"/>
+    <icon selectedlogo="res:image/selectedlogo.png" main="res:image/main.png" logo="res:image/logo.png"/>
+</config>

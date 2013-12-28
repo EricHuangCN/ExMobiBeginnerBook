@@ -1,0 +1,11 @@
+<cdf>
+	<id>testtheme</id><!-- 主题的id，用于config.xml中应用该主题 -->
+	<name>测试主题</name><!-- 主题的名称 -->
+	<description>给按钮增加默认样式</description><!-- 主题的基本描述 -->
+	<date>2013-12-12</date><!-- 主题的开发日期 -->
+	<vendor url="http://www.exmobi.cn" email="edn@exmobi.cn"></vendor><!-- 开发者信息 -->
+	<!-- setting可以配置所有控件的默认属性以及各个控件的默认样式 -->
+	<setting>
+		<button overlay="none" overlay-click="none" border-color="#007a57" border-size="0" background-color="#eb9b34" background-click-color="#db7722" border-click-color="transparent" color="white" click-color="white"/>		
+	</setting>
+</cdf>

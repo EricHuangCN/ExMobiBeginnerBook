@@ -1,0 +1,21 @@
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>B页面</title>
+<script>
+<![CDATA[
+function getA(){
+	document.getElementById("param").value = window.getParameter("param");
+	document.getElementById("session").value = window.getStringSession("session");
+}
+]]>
+</script>
+</head>
+<body onload="getA()">
+获取参数的输入框：
+<input type="text" id="param"/>
+获取session的输入框：
+<input type="text" id="session"/>
+<input type="button" value="关闭" onclick="script:close"/>
+</body>
+</html>

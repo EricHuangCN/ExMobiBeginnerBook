@@ -1,0 +1,18 @@
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>打开页面的几种方式</title>
+<script>
+<![CDATA[
+function doOpen(){
+	window.open("res:page/index.xhtml");
+}
+]]>
+</script>
+</head>
+<body>
+<div href="http://www.nj.fiberhome.com.cn">通过href打开</div>
+<input type="button" value="通过onclick打开" onclick="res:page/index.xhtml"/>
+<a href="doOpen()">通过JS打开</a>
+</body>
+</html>

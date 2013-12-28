@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.nj.fiberhome.com.cn/exmobi.dtd">
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>ajax登陆</title>
+		<script>
+		<![CDATA[
+
+		//AJAX对象提交开始=====================================
+		function doSubmit(){
+			//设置请求的URL
+			var url = 'http://oa/app/template/checkLogin.jsp';
+			//设置请求的方法method
+			var method = 'post';
+			//设置提交的参数，这里是键值对的参数
+			var username = document.getElementById('username').value;
+			var password = document.getElementById('password').value;
+			var data = 'username='+username+'&password='+password;
+			//头信息以json格式存放，键值对的参数头信息通常为application/x-www-form-urlencoded
+			var contentType = '{"Content-Type": "application/x-www-form-urlencoded"}';
+			//是否显示阻塞进度条
+			var isShowProgress = true;
+			//构造AJAX函数
+			var ajax = new Ajax(url, method, data, doSuccess, doFail, contentType, isShowProgress);
+			//设置传给回调函数的参数
+			ajax.setStringData('username', username);
+			//发送AJAX
+			ajax.send();
+		}
+
+		//ajax的回调函数（成功和失败回调均有）有一个默认的参数，通过该参数可以获得ajax请求的响应结果
+		function doSuccess(data){
+			//由于返回的内容是JSON字符串，可以直接转为JSON对象更适合JS操作
+			//登陆成功响应为{"status":"success"}，登陆失败响应为{"status":"用户名或密码错误!"}
+			var result = eval('('+data.responseText+')');
+			if(result.status=='success'){
+				//如果登陆成功，则取出之前传过来的username作为提示信息
+				alert('欢迎您：'+data.getStringData('username')+'!');
+			}else{
+				alert(result.status);
+			}
+		}
+
+		function doFail(data){
+			
+		}
+
+		//表单AJAX提交提交开始=====================================
+		function doFormSubmit(){
+			document.getElementById('form').submit();
+		}
+		//表单提交成功回调函数
+		function onSuccess(data){
+			var result = eval('('+data.responseText+')');
+			if(result.status=='success'){//登陆成功分支
+				alert('登陆成功!');
+			}else{//登陆失败分支
+				alert(result.status);
+			}
+		}
+		//表单提交失败回调函数
+		function onFail(data){
+
+		}
+		]]>
+		</script>
+	</head>
+	<body>
+		<!-- form表单的ajax请求关键在于设置success属性（必须）和fail属性（可选） -->
+		<form success="onSuccess" fail="onFail" id="form" action="http://oa/app/template/checkLogin.jsp" method="post">
+			<!-- 构造登陆元素：用户名 -->
+			<font color="red" style="width:30%">用户名：</font>
+			<input type="text" id="username" name="username" style="width:70%"></input>
+			
+			<!-- 构造登陆元素：密码 -->
+			<font color="red" style="width:30%">密码：</font>
+			<input type="password" id="password" name="password" style="width:70%"></input>
+			<!-- 点击ajax登陆按钮触发ajax请求 -->
+			<input type="button" value="ajax登陆" style="width:50%;" onclick="doSubmit()"></input>
+			
+			<!-- 点击表单登陆按钮触发表单的ajax提交 -->
+			<input type="button" value="表单登陆" style="width:50%;" onclick="doFormSubmit()"></input>
+		
+		</form>
+	</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.nj.fiberhome.com.cn/exmobi.dtd">
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>ajax登陆</title>
+		<script>
+		<![CDATA[
+
+		
+
+		//表单AJAX提交提交开始=====================================
+		function doFormSubmit(){
+			document.getElementById('form').submit();
+		}
+		//表单提交成功回调函数
+		function onSuccess(data){
+			var result = eval('('+data.responseText+')');
+			if(result.status=='success'){//登陆成功分支
+				alert('登陆成功!');
+			}else{//登陆失败分支
+				alert(result.status);
+			}
+		}
+		//表单提交失败回调函数
+		function onFail(data){
+
+		}
+		]]>
+		</script>
+	</head>
+	<body>
+		<!-- form表单的ajax请求关键在于设置success属性（必须）和fail属性（可选） -->
+		<form success="onSuccess" fail="onFail" id="form" action="http://oa/app/template/checkLogin.jsp" method="post">
+			<!-- 构造登陆元素：用户名 -->
+			<font color="red" style="width:30%">用户名：</font>
+			<input type="text" id="username" name="username" style="width:70%"></input>
+			
+			<!-- 构造登陆元素：密码 -->
+			<font color="red" style="width:30%">密码：</font>
+			<input type="password" id="password" name="password" style="width:70%"></input>
+			
+			<!-- 点击表单登陆按钮触发表单的ajax提交 -->
+			<input type="button" value="表单登陆" style="width:100%;" onclick="doFormSubmit()"></input>
+		
+		</form>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<maxml version="2.0" xmlns="http://www.nj.fiberhome.com.cn/map"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.nj.fiberhome.com.cn/map maxml-2.0.xsd">
+	<config>
+    	<htmlformat wellformat="true" />
+    	<!-- 配置伪域名 -->
+    	<domain address="218.94.117.235:1001" name="oa"/>
+    	<!-- 配置数据库连接参数 -->
+    	<database id="postgresql" dbtype="postgresql" ip="218.94.117.235" port="1006" dbname="app" user="sitest" password="123456" maxconn="10" minconn="2" defconn="5" />
+  	</config>
+  	<route baseaddr="http://oa">
+  	
+  		<!-- form的ajax提交 -->
+		<forward pattern="/app/template/checkLogin.jsp" path="mCheckLogin.jsp"/>
+  	
+  	</route>
+  	
+  	<services>
+  		<!-- http-service用于发布http接口 -->
+  		<http-service>
+  			<!-- 每一个接口对应一个forward配置，
+  			其中pattern是接口的被调用的名称，完整的调用地址为:http://{ip}:{port}/process/notify/{appid}/{pattern}
+  			所以针对此配置，本机的调用接口应该为http://127.0.0.1:8001/process/notify/pushdemo/itask
+  			调用接口的时候可以传递一些参数，参数可以在url中也可以在请求头或者请求正文中，参数可以是键值对也可以是非键值对
+  			path是当接口被调用时服务端的处理JSP地址，在JSP中就可以获取调用接口时传递的参数 -->
+  			<forward pattern="/itask" path="push/itask.jsp"/> 		
+  		</http-service>
+  	
+  	</services>
+</maxml>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<config clientversion="4" scope="client" devicetype="all">
+    <appid>oademo</appid>
+    <appname>页面抓取集成</appname>
+    <description></description>
+    <version>1.0</version>
+    <date>2013-12-11</date>
+    <homepage src="http://oa/app/template/login.jsp"/>
+    <faultconfig src=""/>
+    <vendor url="" email=""></vendor>
+    <access orientation="port" land="false" network="true" gps="true" camera="true" certificate="true"/>
+    <icon selectedlogo="res:image/selectedlogo.png" main="res:image/main.png" logo="res:image/logo.png"/>
+</config>

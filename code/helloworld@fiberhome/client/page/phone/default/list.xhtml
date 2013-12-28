@@ -1,0 +1,64 @@
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>拖动列表</title>
+<script>
+<![CDATA[
+
+function doLoad(){	
+	showList();
+}
+
+
+function showList(){
+	
+	var listview = document.getElementById('listview');
+	var dp = listview.getDataProvider();
+	var item = [];
+	item.push('{"name":{"innerHTML":"黄楠"},"number":{"innerHTML":"18901596118"},"listitem":{"href":"alert(1)"}}');
+	item.push('{"name":{"innerHTML":"高明珠"},"number":{"innerHTML":"13655190214"},"listitem":{"href":"alert(2)"}}');
+	dp.appendItems('['+item.join(',')+']');
+	dp.refreshData();
+}
+]]>
+</script>
+</head>
+<body onload="doLoad()">
+<list id="listview" onscrolltop="showList()" onscrollbottom="showList()">
+	<div data-role="listtopdrag" style="text-align:center;height:30dp">
+		<font style="font-size:20dp;color:#333333">向下拖动</font>
+	</div>
+	<div data-role=" listtoprelease" style="text-align:center">
+		<font style="font-size:20dp;color:#333333">释放即将刷新</font>
+	</div>
+	<div data-role="listtoprefresh" style="text-align:center" >
+		<font style="font-size:20dp;color:#333333">正在刷新.....</font>
+	</div>
+			
+	<div data-role="listitem" style="background-click-color:#cccccc;">
+		<div style="width:10%;">
+			<img src="res:image/icon_user.png"/>
+		</div>
+		<div style="width:80%;">
+			<font id="name" style="color:#5f5f5f;font-size:1.5em">姓名</font>
+			<br />
+			<font id="number" style="color:#5f5f5f;font-size:1.5em">电话号码</font>
+		</div>
+		<div style="width:10%;">
+			<img src="res:image/icon_arrow.png"/>
+		</div>
+		<hr/>
+	</div>
+	
+	<div data-role="listbottomdrag" style="text-align:center;height:30dp">
+		<font style="font-size:20dp;color:#333333">向上拖动</font>
+	</div>
+	<div data-role=" listbottomrelease" style="text-align:center">
+		<font style="font-size:20dp;color:#333333">释放即将刷新</font>
+	</div>
+	<div data-role="listbottomrefresh" style="text-align:center">
+		<font style="font-size:20dp;color:#333333">正在刷新.....</font>
+	</div>
+</list>
+</body>
+</html>

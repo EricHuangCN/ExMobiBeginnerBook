@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<maxml version="2.0" xmlns="http://www.nj.fiberhome.com.cn/map"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.nj.fiberhome.com.cn/map maxml-2.0.xsd">
+	<config>
+    	<htmlformat wellformat="true" />
+    	<!-- 配置伪域名 -->
+    	<domain address="218.94.117.235:1001" name="oa"/>
+  	</config>
+  	<!-- 配置route路由，如果有多个域名可以配置多个route -->
+  	<route baseaddr="http://oa">
+  		<!-- 此处配置客户端URL请求的处理JSP文件，pattern是匹配URL的正则表达式，path是对用的服务端的JSP文件名 -->
+  		
+  		<!-- 登陆页面get -->
+		<forward pattern="/app/template/login.jsp" path="mLogin.jsp"/>	
+  	
+  		<!-- 登陆校验post带键值对 -->
+		<forward pattern="/app/template/checkLogin.jsp" path="mCheckLogin.jsp"/>
+		
+		<!-- 任务创建get -->
+		<forward pattern="/app/template/jsp/addTask.jsp" path="mAddTask.jsp"/>
+		
+		<!-- 保存任务post带附件 -->
+		<forward pattern="/app/template/action/taskManagerAction.jsp\?handler=save" path="mTaskManager.jsp"/>
+		
+		<!-- 列表展示post带XML请求体 -->
+		<forward pattern="/app/template/action/taskManagerAction.jsp\?handler=list&amp;dataType=xml.*" path="mTaskManagerListXML.jsp"/>
+		
+  		<!-- 新建信息页面 -->
+		<forward pattern="/app/template/jsp/newInfo.jsp" path="mNewInfo.jsp"/>
+		
+		<!-- 发送信息页面 -->
+		<forward pattern="/app/allInOne.jsp" path="mAllInOne.jsp"/>
+		
+  		
+  	</route>
+</maxml>

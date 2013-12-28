@@ -1,0 +1,74 @@
+<!DOCTYPE html SYSTEM "http://www.nj.fiberhome.com.cn/exmobi.dtd">
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>数据库-insert</title>
+<script>
+<![CDATA[
+	function doSubmit(){
+		if(document.getElementById("title").value==""){
+			alert("标题不能为空！");
+			return;
+		}else if(document.getElementById("begin_time").value==""){
+			alert("开始时间不能为空！");
+			return;
+		}else if(document.getElementById("end_time").value==""){
+			alert("结束时间不能为空");
+			return;
+		}
+		document.getElementById("form").submit();
+	}
+]]>
+</script>
+</head>
+<body id="content">
+	<form id="form" action="http://sql/insert.jsp" method="post" target="_self">
+		标题：
+		<br/>
+		<input type="text" id="title" name="title" value=""/>
+		<br/>
+		开始时间：<br/>
+		<object type="date" id="begin_time" name="begin_time" value="" style="width:100%"/>
+		<br/>
+		结束时间：<br/>
+		<object type="date" id="end_time" name="end_time" value="" style="width:100%"/>
+		<br/>
+		任务执行人：
+		<br/>
+		<select name="executor" id="executor">
+        	<option  selected="selected">==请选择==</option>
+            <option value="李勇">李勇</option>
+            <option value="陶万鹏">陶万鹏</option>
+            <option value="陈文胜">陈文胜</option>
+            <option value="梅璇">梅璇</option>
+            <option value="黄清华">黄清华</option>
+            <option value="郑桂端">郑桂端</option>
+            <option value="李伟强">李伟强</option>
+            <option value="潘家华">潘家华</option>
+            <option value="卢雅辉">卢雅辉</option>
+            <option value="黄伟丰">黄伟丰</option>
+            <option value="史长春">史长春</option>
+            <option value="陈丽娟">陈丽娟</option>
+        </select>
+		<br/>
+		优先级：
+		<br/>
+		<select name="priority_level" id="priority_level">
+           <option  selected="selected">==请选择==</option>
+           <option value="暂不">暂不</option>
+           <option value="一般">一般</option>
+           <option value="需要">需要</option>
+           <option value="急">急</option>
+           <option value="很急">很急</option>
+         </select>
+		<br/>
+		任务说明：
+		<br/>
+		<input type="text" name="remark" value=""/>
+		<br/>
+	</form>
+</body>
+<footer>
+	<input type="button" onclick="doSubmit()" value="新增" style="width:100%"/>
+</footer>
+</html>

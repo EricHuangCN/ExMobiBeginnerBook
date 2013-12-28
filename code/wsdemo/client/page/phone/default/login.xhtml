@@ -1,0 +1,36 @@
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>web service登录</title>
+<script>
+<![CDATA[
+	function doAjax(){
+		var data = "username="+document.getElementsByName("username")[0].value+"&password="+document.getElementsByName("password")[0].value;
+		//为了区分正常提交给url添加特殊标记以在mapp中能分别走对应的处理JSP
+		var url = document.getElementById("form").action+"?ajax";
+		var ajax = new Ajax(url, "post", data, onSuccess, onError, '{"Content-Type": "application/x-www-form-urlencoded"}', true);	
+		ajax.send();
+	}
+	
+	function onSuccess(data){
+		var json = eval("("+data.responseText+")");
+		alert(json.status);
+	}
+	
+	function onError(){
+		alert("请求错误！");
+	}
+]]>
+</script>
+</head>
+<body>
+	<form id="form" action="http://domain/app/services/webServiceTest" method="post">
+		<input type="text" name="username" value="admin" prompt="请输入用户名"/>
+		<br/>
+		<input type="password" name="password" value="111" prompt="请输入密码"/>
+		<br/>
+		<input type="submit" value="通过form登录" style="width:50%"/>
+		<input type="button" value="通过ajax登录" onclick="doAjax()" style="width:50%"/>
+	</form>
+</body>
+</html>

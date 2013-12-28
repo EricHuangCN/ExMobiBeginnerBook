@@ -1,0 +1,24 @@
+<html>
+<head>	
+<title>表单验证</title>		
+<script>
+	function doSubmit(){
+		if(document.getElementById("username").value==""||document.getElementById("password").value==""){
+			alert("用户名或者密码不能为空！");
+			return;
+		}
+		document.getElementById("form").submit();
+	}
+</script>
+</head>
+<body>
+	<form id="form" action="http://local/login.jsp" method="post">
+		<font style="width:30%">用户名</font>
+		<input type="text" style="width:70%" id="username" name="username"/>
+		<font style="width:30%">密码</font>
+		<input type="password" style="width:70%" id="password" name="password"/>
+		<br size="10"/>
+		<input type="button" style="width:70%;align:center" value="登入" onclick="doSubmit()"/>
+	</form>
+</body>
+</html>

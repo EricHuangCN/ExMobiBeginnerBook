@@ -1,0 +1,118 @@
+﻿/*左右结构*/
+.label-left{
+	width:30%;
+	margin:8 4;
+	color:#838383;
+}
+.label-right{
+	width:70%;
+	margin:4;
+}
+.label-input{
+	width:50%;
+	margin:4;
+}
+.label-input-btn{
+	width:20%;
+	padding:12 0;
+	margin:4 4 4 0;
+}
+/*右侧蓝色文字*/
+.font-instruction{
+	color:#274b7c;
+}
+
+/*九宫控件样式*/
+.grid{
+	cell-width:75dp;
+	width:95%;
+	align:center;
+	color:white;
+	current-color:white;
+	icon-margin:12;
+	click-color:white;
+	font-size:16dp;
+}
+.tip{
+	tip-background-image:url(res:image/bg/tip.png);
+	tip-background-color:transparent;
+	tip-border-size:0;
+	tip-overlay:none;
+	ricontextcolor:#ffffff;
+	tip-padding:2 4 6 4;
+}
+
+/*表格*/
+.table{
+	background-color:transparent;
+	width:100%;
+	margin:8 10;
+	border-color:#cccccc;
+}
+.table-title{
+	color:white;
+	background-color:#eb9b34;
+}
+td{
+	height:40;
+	text-align:center;
+	text-valign:middle;
+}
+/*div仿表格*/
+.table-box{
+	border-size:1;
+	border-radius:8dp;
+	border-color:#cccccc;
+	width:100%;
+	margin:8 10;
+}
+.table-header{
+	background-image:url(res:image/table/tbl_header.png);
+	width:100%;
+	padding:12 0;
+	color:white;
+	text-align:center;
+	text-valign:middle;
+}
+.table-body{
+	width:100%;
+	border-radius:8dp;
+}
+.table-line{
+	padding:8 0;
+	border-bottom-size:1;
+	border-color:#cccccc;
+}
+
+
+/*下拉菜单样式*/
+.contextmenu-menu{
+	option-background-color:#a9a9a9;
+	option-background-click-color:#6b6b6b;
+	option-background-current-color:#6b6b6b;
+	color:white;
+	click-color:white;
+	current-color:#ffffff;
+}
+/*主页 */
+.menu{
+	width:50%;
+	text-valign:middle;
+	color:white;
+	font-size:18dp;
+	margin:4;
+}
+/*搜索框*/
+.search{
+	background-image:url(res:image/form/input_txt.png);
+	border-size:0;
+	background-color:transparent;
+	width:80%;
+	height:40;
+	padding:0;
+}
+.btn-search{
+	width:20%;
+	padding:0;
+	height:40;
+}

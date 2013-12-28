@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.nj.fiberhome.com.cn/exmobi.dtd">
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title show="false">title</title>
+		<script>
+		<![CDATA[
+		function doLoad(){
+			//获取传递的参数
+			var username = window.getPushParameter("usernmae");
+			var title = window.getPushParameter("title");
+
+
+			//对获取的参数进行相应的处理，这里修改标题内容
+			document.getElementById("titleBar").title = title;
+
+			/*
+			由于推送信息不能过多，很多信息是在推送页面中再获取的（苹果的推送通道就限制推送的内容大小）
+			比如：第三方调用的时候常传递的参数可能还有任务的id或者url等信息，是具体情况而定
+			比如传递一个id，可以获取id组成url发起ajax继续拉取数据，并进行相应的操作
+			var id = window.getPushParameter("id");
+			var url = "http://oa/getDetail.jsp?id="+id;
+			var ajax = new Ajax(url ......);
+			
+			*/
+		}
+		]]>
+		</script>
+	</head>
+	<header>
+		<titlebar id="titleBar" caption="返回" iconhref="script:close" title="" hidericon="true"></titlebar>
+	</header>
+	<body onload="doLoad()">
+		This is the page content.
+	</body>
+</html>
