@@ -8,7 +8,7 @@
 
 
 部分章节对应示例代码：
-
+<pre><code>
 第4章客户端XHMTL编程               helloworld
 
 第5章服务端敏捷适配开发            hellojsp
@@ -26,13 +26,12 @@
 第13章主题设计和制作               usetheme和maketheme
 
 第17章ExMobiJS框架介绍             exmobijs
-
+</code></pre>
 
 
 其余章节示例代码可参考书中示例或者翻阅二次开发手册（http://www.exmobi.cn/notebook.jsp）
 
 访问ExMobi官网获取更多信息http://www.exmobi.cn
-
 
 
 
