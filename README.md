@@ -29,7 +29,7 @@
 </code></pre>
 
 
-其余章节示例代码可参考书中示例或者翻阅二次开发手册（http://www.exmobi.cn/notebook.jsp）
+其余章节示例代码可参考书中示例或者翻阅二次开发手册（http://www.exmobi.cn/notebook.jsp ）
 
 访问ExMobi官网获取更多信息http://www.exmobi.cn
 
