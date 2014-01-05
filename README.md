@@ -6,6 +6,8 @@
 
 电子书在线版本可参看此网页http://www.exmobi.cn/book/index.html
 
+如何在svn中导出示例代码请参考此贴http://bbs.exmobi.cn/thread-1634-1-1.html
+或者直接点击本页中的右侧按钮“Download ZIP”可以打包下载全部资源库内容
 
 部分章节对应示例代码：
 <pre><code>
