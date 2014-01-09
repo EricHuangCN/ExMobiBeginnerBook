@@ -21,7 +21,7 @@
 	function doSubmit(){
 		var v = $v.validate()//默认alert提示
 				.add("title","请输入标题","Require")
-				//.add("title","标题至少要大于等于4个字","Limit","4")
+				.add("title","标题至少要大于等于4个字","Limit","4")
 				.add("type","类型必须选择一项","Require")
 				.add("read","可传阅部门至少勾选一项，最多选两项","Checked","1|2")
 				.add("leval","紧急程度必须勾选一项","Checked")
@@ -29,8 +29,8 @@
 				.add("file","请选择doc或者txt文件","Accept","doc|txt")
 				.add("area","请填写所属区域","Require")
 				.add("public","请填写正确时间","Require")
-				.add("public","请填写发布时间","Date")
-				.add("isPublic","请请选择发布","Checked")   		
+				//.add("public","请填写发布时间","Date")
+				.add("isPublic","请选择是否发布","Checked")   		
         		.start();
        	if(v) alert("校验成功！");
 	}     
