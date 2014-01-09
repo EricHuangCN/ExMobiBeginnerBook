@@ -32,7 +32,6 @@ hr{margin:10 0;}
 		if(v){
 			//记住用户名密码则将当前值存到cahce，setCache不传参即为存当前值
 			if($("isRemember").checked){
-				alert($u.cache);
 				$u.cache.set("username","password","isRemember");
 			}else{//不记住密码则清空cache值，只要设置为空字符串即可
 				$u.cache.clear("username","password","isRemember");
