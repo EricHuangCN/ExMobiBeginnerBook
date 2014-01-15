@@ -19,9 +19,10 @@
     }
     
 	function doSubmit(){
+		$v.regUsername = /^[A-Za-z0-9\u0391-\uFFE5]+$/;//汉字字母数字，可以自定义增加校验项
 		var v = $v.validate()//默认alert提示
 				.add("title","请输入标题","Require")
-				.add("title","标题至少要大于等于4个字","Limit","4")
+				.add("title","用户名只能输入汉字字母数字","regUsername")//使用自定义校验项
 				.add("type","类型必须选择一项","Require")
 				.add("read","可传阅部门至少勾选一项，最多选两项","Checked","1|2")
 				.add("leval","紧急程度必须勾选一项","Checked")
@@ -87,7 +88,7 @@
 
 <body>
 <div>
-	标题(有onchange事件试试看)：<input type="text" name="title" value="11" onchange="match()"/>
+	标题(有onchange事件试试看)：<input type="text" name="title" value="11"/>
 	<hr/>
 	类型：
 	<select name="type">
