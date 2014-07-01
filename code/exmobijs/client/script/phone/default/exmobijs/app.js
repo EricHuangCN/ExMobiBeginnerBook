@@ -1,6 +1,6 @@
 ﻿/*
 *	ExMobi4.0 JS 框架之 应用场景类app.js(依赖utility.js)
-*	Version	:	1.0.0.9
+*	Version	:	1.1.0.0
 *	Author	:	@黄楠nandy
 *	Email	:	huangnan@nj.fiberhome.com.cn
 *	Weibo   :   http://weibo.com/nandy007
@@ -108,6 +108,11 @@ var $a = {
 	_cacheSuccess:function(data){
 		
 		var isRefreshData = $a.init.isRefreshData;
+		
+		if(!$u.icache(data.getStringData("_cahceFlagKey"))){
+			isRefreshData = true;
+		}		
+		
 		var str = data.responseText.trim()
 		if($u.icache(data.getStringData("_cahceFlagKey"))==str){
 			isRefreshData = false;
